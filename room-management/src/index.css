@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  /* Kết hợp các viền lại với nhau */
+}
+
+th,
+td {
+  border: 1px solid black;
+  /* Viền cho các ô bảng */
+  padding: 8px;
+  /* Thêm khoảng cách bên trong ô */
+  text-align: left;
+  /* Canh trái nội dung ô */
+}
