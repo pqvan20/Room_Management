@@ -1,5 +1,5 @@
 import './index.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Read from './components/Read'
 import Write from './components/Write'
 import Edit from './components/Edit'

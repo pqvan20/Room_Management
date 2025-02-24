@@ -1,5 +1,6 @@
 {
   "name": "room-management",
+  "homepage": "https://pqvan20.github.io/Room_Management",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,6 +13,7 @@
     "gh-pages": "^6.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-paginate": "^8.3.0",
     "react-router-dom": "^7.1.5",
     "react-scripts": "5.0.1",
     "sweetalert2": "^11.17.2",

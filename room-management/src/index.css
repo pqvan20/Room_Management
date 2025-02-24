@@ -1,29 +1,219 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@media (min-width: 768px) {
+  body {
+    margin: 0;
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif; */
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+    font-size: 22px;
+  }
+
+
+  /* .container {
+    display: grid;
+    grid-template-areas: "left center right";
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 1px;
+    padding: 1px;
+  } */
+
+  .inputBox {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: auto;
+    text-align: center;
+  }
+
+  input {
+    font-size: 22px;
+  }
+
+  select {
+    font-size: 22px;
+  }
+
+  .header {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  button {
+    font-size: 22px;
+  }
+
+  .twoBtn {
+    text-align: center;
+    margin: auto;
+  }
+
+  .twoBtn button {
+    width: 15vw;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@media (max-width: 767px) {
+  body {
+    margin: 0;
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif; */
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+    font-size: 15px;
+  }
+
+  .inputBox {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    }
+
+  input {
+    font-size: 15px;
+  }
+
+  select {
+    font-size: 15px;
+  }
+
+  .header {
+    font-size: 17px;
+    text-align: center;
+  }
+
+  button {
+    margin: auto;
+    font-size: 17px;
+  }
+
+  .twoBtn {
+    text-align: center;
+    margin: auto;
+  }
+
+  .twoBtn button {
+    width: 25vw;
+  }
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  /* Kết hợp các viền lại với nhau */
+  border: 1px solid black;
 }
 
-th,
-td {
+th {
+  background-color: #e8f0fe;
+}
+
+table th,
+table td {
+  padding: 5px;
   border: 1px solid black;
-  /* Viền cho các ô bảng */
-  padding: 8px;
-  /* Thêm khoảng cách bên trong ô */
-  text-align: left;
-  /* Canh trái nội dung ô */
+  text-align: center;
+}
+
+table tr:hover {
+  background-color: #ddd;
+  /* Darker gray background on hover */
+}
+
+input {
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  margin-top: 10px;
+}
+
+input:focus {
+  border: 2px solid #4CAF50;
+  background-color: #e8f0fe;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+button {
+  margin-top: 10px;
+  margin-left: 5px;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  filter: brightness(85%);
+    /* Darker green on hover */
+}
+
+select {
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  color: #333;
+  margin-top: 10px;
+}
+
+select:focus {
+  border: 2px solid green;
+  background-color: #e8f0fe;
+}
+
+.header {
+  margin-top: 10px;
+}
+
+.search {
+  width: 30%;
+}
+
+.deleteBtn {
+background-color:  #FF7F7F;
+}
+
+.editBtn {
+  background-color: #ADD8E6;
+}
+
+.writeBtn {
+  background-color:  #66CC66;
+}
+
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.pagination__link {
+  margin: 0 5px;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.pagination__link:hover {
+  background-color: #e8f0fe;
+}
+
+.pagination__link--disabled {
+  cursor: not-allowed;
+  color: #ccc;
+}
+
+.pagination__link--active {
+  background-color: #e8f0fe;
 }
