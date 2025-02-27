@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Room_Management/static/css/main.1993d78c.css",
-    "main.js": "/Room_Management/static/js/main.902caf72.js",
+    "main.css": "/Room_Management/static/css/main.2c672f44.css",
+    "main.js": "/Room_Management/static/js/main.8e707060.js",
     "index.html": "/Room_Management/index.html",
-    "main.1993d78c.css.map": "/Room_Management/static/css/main.1993d78c.css.map",
-    "main.902caf72.js.map": "/Room_Management/static/js/main.902caf72.js.map"
+    "main.2c672f44.css.map": "/Room_Management/static/css/main.2c672f44.css.map",
+    "main.8e707060.js.map": "/Room_Management/static/js/main.8e707060.js.map"
   },
   "entrypoints": [
-    "static/css/main.1993d78c.css",
-    "static/js/main.902caf72.js"
+    "static/css/main.2c672f44.css",
+    "static/js/main.8e707060.js"
   ]
 }
