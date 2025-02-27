@@ -1,13 +1,12 @@
-import React, { useState } from 'react'
-import app from '../firebase_config'
-import { getDatabase, ref, set, push } from 'firebase/database'
-import { useNavigate } from 'react-router-dom';
-import 'toastr/build/toastr.min.css';
+import React, { useState, useEffect } from 'react';
+import app from '../firebase_config';
+import { getDatabase, ref, set, get } from 'firebase/database';
+import { useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-
-function Write() {
+function EditProduct() {
     const navigate = useNavigate();
+    const { firebaseId } = useParams();
 
     let [inputValue1, setInputValue1] = useState("");
     let [inputValue2, setInputValue2] = useState("");
@@ -15,28 +14,46 @@ function Write() {
     let [inputValue4, setInputValue4] = useState("");
     let [inputValue5, setInputValue5] = useState("");
 
-    const saveData = async () => {
+    useEffect(() => {
+        const fetchData = async () => {
+            const db = getDatabase(app);
+            const dbRef = ref(db, "product/" + firebaseId);
+            const snapshot = await get(dbRef);
+            if (snapshot.exists()) {
+                const targetObject = snapshot.val();
+                setInputValue1(targetObject.product_name);
+                setInputValue2(targetObject.unit);
+                setInputValue3(targetObject.price.toString());
+                setInputValue4(targetObject.stock_quantity.toString());
+                setInputValue5(targetObject.note);
+            } else {
+                alert("error");
+            }
+        };
+        fetchData();
+    }, [firebaseId]);
+
+    const overwriteData = async () => {
         const db = getDatabase(app);
-        const newDocRef = push(ref(db, "product"));
+        const newDocRef = ref(db, "product/" + firebaseId);
         set(newDocRef, {
             product_name: inputValue1,
             unit: inputValue2,
             price: inputValue3 ? parseInt(inputValue3.replace(/[^0-9]/g, ''), 10) : 0,
             stock_quantity: inputValue4 ? parseInt(inputValue4.replace(/[^0-9]/g, ''), 10) : 0,
-            note: inputValue5
+            note: inputValue5,
         }).then(() => {
-            // toastr.success('Cập nhật thành công!');
             Swal.fire({
-                title: 'Tạo thành công!',
+                title: 'Cập nhật thành công!',
                 icon: 'success',
                 showConfirmButton: false, // Không hiển thị nút OK
                 timer: 2000 // Đóng thông báo sau 3 giây
-              });              
+            });
             navigate("/");
         }).catch((error) => {
-            alert("error: ", error.message);
+            alert("Lỗi: ", error.message);
         });
-    }
+    };
 
     const formatNumber = (number) => {
         return new Intl.NumberFormat('vi-VN').format(number);
@@ -49,7 +66,7 @@ function Write() {
 
     return (
         <div class="inputBox">
-            <div class="header">Tạo sản phẩm</div>
+            <div class="header">Sửa Sản Phẩm</div>
             <input
                 type="text"
                 value={inputValue1}
@@ -59,6 +76,7 @@ function Write() {
             <select
                 id="unit"
                 value={inputValue2}
+                placeholder="Chọn đơn vị"
                 onChange={(e) => setInputValue2(e.target.value)}
             >
                 <option value="">Chọn đơn vị</option>
@@ -67,7 +85,7 @@ function Write() {
                 <option value="Cân">Cân</option>
                 <option value="Cuộn">Cuộn</option>
                 <option value="Tuýp">Tuýp</option>
-                <option value="Tuýp">Lọ</option>
+                <option value="Lọ">Lọ</option>
             </select>
             <input
                 type="text"
@@ -89,10 +107,11 @@ function Write() {
             />
             <div class="twoBtn">
                 <button onClick={() => navigate("/")}>Quay lại</button>
-                <button className='writeBtn' onClick={saveData}>Lưu</button>
+                <button class="editBtn" onClick={overwriteData}>Cập nhật</button>
             </div>
         </div>
+
     );
 }
 
-export default Write;
+export default EditProduct;

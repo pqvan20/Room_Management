@@ -18,20 +18,34 @@
     padding: 1px;
   } */
 
+  table {
+    margin-top: 10px;
+  }
+
   .inputBox {
     display: flex;
     flex-direction: column;
     width: 40%;
     margin: auto;
-    text-align: center;
   }
 
   input {
     font-size: 22px;
+    margin-top: 10px;
+  }
+
+  .discountInput,
+  .qualityInput {
+    width: 30%;
+    margin-right: 10px;
   }
 
   select {
     font-size: 22px;
+  }
+
+  .productSelect {
+    margin-top: 10px;
   }
 
   .header {
@@ -50,6 +64,19 @@
 
   .twoBtn button {
     width: 15vw;
+    margin-top: 10px;
+  }
+
+  .writeBtn,
+  .billBtn,
+  .productBtn,
+  .deleteBtn {
+    margin-left: 10px;
+  }
+
+  .productBillBtn {
+    background-color: #FFA07A;
+    margin-right: 10px;
   }
 }
 
@@ -64,20 +91,35 @@
     font-size: 15px;
   }
 
+  table {
+    margin-top: 5px;
+  }
+
   .inputBox {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 80%;
     margin: auto;
-    text-align: center;
-    }
+  }
 
   input {
     font-size: 15px;
+    margin-top: 5px;
+
+  }
+
+  .discountInput,
+  .qualityInput {
+    width: 20%;
+    margin-right: 5px;
   }
 
   select {
     font-size: 15px;
+  }
+
+  .productSelect {
+    margin-top: 5px;
   }
 
   .header {
@@ -97,6 +139,27 @@
 
   .twoBtn button {
     width: 25vw;
+    margin-top: 10px;
+  }
+
+  .deleteBtn,
+  .editBtn {
+    margin-top: 2px;
+  }
+
+  .productBillBtn {
+    background-color: #FFA07A;
+  }
+
+  .writeBtn,
+  .billBtn,
+  .productBtn {
+    margin-left: 5px;
+  }
+
+  .twoBtn {
+    text-align: center;
+    margin: auto;
   }
 }
 
@@ -125,9 +188,6 @@ table tr:hover {
 input {
   padding: 5px;
   border: 2px solid black;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  margin-top: 10px;
 }
 
 input:focus {
@@ -140,19 +200,18 @@ input::placeholder {
 }
 
 button {
-  margin-top: 10px;
-  margin-left: 5px;
   padding: 5px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
   transition: background-color 0.3s;
+  border-color: black;
 }
 
 button:hover {
   filter: brightness(85%);
-    /* Darker green on hover */
+  /* Darker green on hover */
 }
 
 select {
@@ -175,10 +234,12 @@ select:focus {
 
 .search {
   width: 30%;
+  border-color: #333;
+  border-radius: 0;
 }
 
 .deleteBtn {
-background-color:  #FF7F7F;
+  background-color: #FF7F7F;
 }
 
 .editBtn {
@@ -186,7 +247,7 @@ background-color:  #FF7F7F;
 }
 
 .writeBtn {
-  background-color:  #66CC66;
+  background-color: #66CC66;
 }
 
 
@@ -216,4 +277,38 @@ background-color:  #FF7F7F;
 
 .pagination__link--active {
   background-color: #e8f0fe;
+}
+
+.billBtn {
+  background-color: antiquewhite;
+}
+
+.productBtn {
+  background-color: lightblue;
+}
+
+.statusBtn {
+  margin-top: 10px;
+}
+
+.custom-datepicker {
+  width: 100%;
+  box-sizing: border-box;
+  /* Đảm bảo padding và border được tính vào chiều rộng */
+}
+
+.remove_product_bill_btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #FF7F7F;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  padding: 0
 }

@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import ReactPaginate from 'react-paginate';
 
-function Edit() {
+function ManageProduct() {
 
     const navigate = useNavigate();
     let [productArray, setProductArray] = useState([]);
@@ -80,19 +80,20 @@ function Edit() {
 
     return (
         <div>
-            <div className="header">Danh sách sản phẩm</div>
+            <div className="header">Danh Sách Sản Phẩm</div>
             <input className="search"
                 type="text"
                 placeholder="Tìm kiếm..."
                 value={searchTerm}
                 onChange={handleSearchChange}
             />
-            <button className="writeBtn" onClick={() => navigate("/writeProduct")}>Tạo sản phẩm</button><br />
+            <button className="writeBtn" onClick={() => navigate("/writeProduct")}>Tạo sản phẩm</button>
+            <button className="billBtn" onClick={() => navigate("/manageBill")}>Hóa đơn</button>
 
             <table>
                 <thead>
                     <tr>
-                        <th>Tên sản phẩm</th>
+                        <th>Sản phẩm</th>
                         <th>Đơn vị</th>
                         <th>Giá</th>
                         <th>Số lượng</th>
@@ -109,7 +110,7 @@ function Edit() {
                             <td>{item.stock_quantity}</td>
                             <td>{item.note}</td>
                             <td>
-                                <button className="editBtn" onClick={() => navigate(`/updateProduct/${item.product_id}`)}>Sửa</button>
+                                <button className="editBtn" onClick={() => navigate(`/editProduct/${item.product_id}`)}>Sửa</button>
                                 <button className="deleteBtn" onClick={() => deleteProduct(item.product_id)}>Xóa</button>
                             </td>
                         </tr>
@@ -132,4 +133,4 @@ function Edit() {
     );
 }
 
-export default Edit;
+export default ManageProduct;
