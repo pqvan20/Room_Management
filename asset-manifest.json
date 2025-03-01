@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Room_Management/static/css/main.308ed157.css",
-    "main.js": "/Room_Management/static/js/main.0d4b3d14.js",
+    "main.css": "/Room_Management/static/css/main.1b945eb1.css",
+    "main.js": "/Room_Management/static/js/main.6f0caf38.js",
     "static/js/239.289f264b.chunk.js": "/Room_Management/static/js/239.289f264b.chunk.js",
     "static/js/977.c39655c2.chunk.js": "/Room_Management/static/js/977.c39655c2.chunk.js",
     "static/js/455.46fc7f89.chunk.js": "/Room_Management/static/js/455.46fc7f89.chunk.js",
     "index.html": "/Room_Management/index.html",
-    "main.308ed157.css.map": "/Room_Management/static/css/main.308ed157.css.map",
-    "main.0d4b3d14.js.map": "/Room_Management/static/js/main.0d4b3d14.js.map",
+    "main.1b945eb1.css.map": "/Room_Management/static/css/main.1b945eb1.css.map",
+    "main.6f0caf38.js.map": "/Room_Management/static/js/main.6f0caf38.js.map",
     "239.289f264b.chunk.js.map": "/Room_Management/static/js/239.289f264b.chunk.js.map",
     "455.46fc7f89.chunk.js.map": "/Room_Management/static/js/455.46fc7f89.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.308ed157.css",
-    "static/js/main.0d4b3d14.js"
+    "static/css/main.1b945eb1.css",
+    "static/js/main.6f0caf38.js"
   ]
 }
